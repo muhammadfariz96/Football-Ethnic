@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Football Ethnic">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet" />
+
+  <!-- Import  Materialize CSS-->
+  <link rel="stylesheet" href="/src/utils/materialize/materialize.min.css">
+
+  <!-- MyCSS -->
+  <link rel="stylesheet" href="/src/css/style.css">
+
+  <!-- Import Manifest -->
+  <meta name="theme-color" content=" #122936" />
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/src/assets/icons/icon.png" />
+  <link rel="shortcut icon" href="/src/assets/icons/icon.png" />
+
+  <title>Football Ethnic</title>
+</head>
+
+<body>
+  <!-- Navigasi -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo" id="logo-container">Football<span>Ethnic</span></a>
+      <a href="#" class="sidenav-trigger" data-target="nav-mobile">&#9776;</a>
+
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+
+  <div class="body-content"></div>
+
+  <!-- Compile Materialize -->
+  <script src="/src/js/jquery.min.js"></script>
+  <script src="/src/utils/materialize/materialize.min.js"></script>
+
+  <!-- Compile Register -->
+  <script src="/src/js/registerServiceWorker.js"></script>
+
+  <!-- Compile App Shell -->
+  <script src="/src/js/App/nav.js"></script>
+  <script src="/src/js/App/shell.js"></script>
+  <script src="/src/js/App/routes.js"></script>
+  <script src="/src/js/notifikasi.js"></script>
+
+  <!-- Compile Database -->
+  <script src="/src/js/database/idb.js"></script>
+  <script src="/src/js/database/db.js"></script>
+  <script src="/src/data/dataLeagues.json"></script>
+
+
+
+  <!-- Compile Api -->
+  <script src="/src/js/Api/fetchApi.js"></script>
+  <script src="/src/js/Api/getStandings.js"></script>
+  <script src="/src/js/Api/renderStandings.js"></script>
+  <script src="/src/js/Api/getTeam.js"></script>
+  <script src="/src/js/Api/renderTeam.js"></script>
+
+
+</body>
+
+</html>

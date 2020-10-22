@@ -1,0 +1,38 @@
+[
+    {
+        "route_liga": "#ligaJer",
+        "nama_liga": "Bundesliga",
+        "negara_liga": "Germany",
+        "logo_liga": "/src/assets/images/daftar-liga/logo_bundesliga.svg"
+    },
+    {
+        "route_liga": "#ligaBlnd",
+        "nama_liga": "Eredivisie",
+        "negara_liga": "Netherland",
+        "logo_liga": "/src/assets/images/daftar-liga/logo_eredivisie.svg"
+    },
+    {
+        "route_liga": "#ligaIng",
+        "nama_liga": "Premiere League",
+        "negara_liga": "England",
+        "logo_liga": "/src/assets/images/daftar-liga/logo_premier_league.svg"
+    },
+    {
+        "route_liga": "#ligaSpn",
+        "nama_liga": "La Liga",
+        "negara_liga": "Spain",
+        "logo_liga": "/src/assets/images/daftar-liga/logo_laliga.svg"
+    },
+    {
+        "route_liga": "#ligaPrc",
+        "nama_liga": "Ligue 1",
+        "negara_liga": "France",
+        "logo_liga": "/src/assets/images/daftar-liga/logo_ligue_1.svg"
+    },
+    {
+        "route_liga": "#ligaItly",
+        "nama_liga": "Seri A",
+        "negara_liga": "Italy",
+        "logo_liga": "/src/assets/images/daftar-liga/logo_serie_a.svg"
+    }
+]

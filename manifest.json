@@ -1,0 +1,17 @@
+{
+    "name": "Football Ethnic",
+    "short_name": "PWA FE",
+    "description": "PWA Football Ethnic",
+    "gcm_sender_id": "541405531896",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#122936",
+    "theme_color": "#122936",
+    "icons": [
+        {
+            "src": "/src/assets/icons/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

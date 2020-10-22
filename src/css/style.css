@@ -1,0 +1,24 @@
+@import url("league.css");
+@import url("standings.css");
+@import url("favTeam.css");
+
+/* Navbar */
+.navbar {
+    background: #122936;
+}
+
+.navbar .sidenav {
+    background: #122936;
+}
+
+.navbar .brand-logo {
+    font-family: Viga;
+    font-size: 32px;
+    color: #f32121;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.navbar .brand-logo span {
+    color: #2196f3;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
