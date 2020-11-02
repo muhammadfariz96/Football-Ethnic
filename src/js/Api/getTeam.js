@@ -1,3 +1,4 @@
+// Fungsi meamanggil api detail team sesuai id team
 const getAllTeam = (id) => {
     const url = `${BASE_URL}teams/${id}`;
 

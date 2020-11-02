@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Fungsi memanggil navigasi
     const loadNav = () => {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     .forEach((elm) => {
                         elm.addEventListener("click", (event) => {
                             // Tutup sidenav
-                            var sidenav = document.querySelector(".sidenav");
+                            const sidenav = document.querySelector(".sidenav");
                             M.Sidenav.getInstance(sidenav).close();
 
                             // Muat konten halaman yang dipanggil

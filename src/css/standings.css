@@ -1,125 +1,131 @@
-.green {
-    color: greenyellow;
+/* Card Standing League */
+.cardStandingLeague {
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f32121, #122936);
 }
 
-.yellow {
-    color: yellow;
+.cardStandingLeague img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
 }
 
-.red {
-    color: red;
+.cardStandingLeague .contentStandingLeague {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.bg-clr {
-    background-color: #2196f3;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 60px;
-    padding-top: 30px;
+.cardStandingLeague .contentStandingLeague h2 {
+    color: #fff;
+    font-family: viga;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 15px;
 }
 
-.rata-kanan {
-    margin-right: 0px;
-    color: white;
-    font-size: large;
+.cardStandingLeague .contentStandingLeague p {
+    color: #fff;
 }
 
-.cmp-name {
-    font-size: 200%;
-    color: white;
-    font-weight: bold;
+@media (min-width: 992px) {
+    .cardStandingLeague {
+        align-items: center;
+        background: linear-gradient(135deg, #2196f3, #122936);
+    }
+
+    .cardStandingLeague img {
+        height: 300px;
+        left: 25%;
+    }
+
+    .cardStandingLeague .contentStandingLeague {
+        width: 50%;
+        left: 45%;
+        bottom: 30%;
+        text-align: right;
+    }
 }
 
-.putih {
-    color: white;
-    font-size: large;
-}
-
-.logo-t {
-    max-width: 200px;
-    padding-top: 30px;
-    margin: auto;
-}
-
-#teamx {
-    margin-top: 20px;
-}
-
-.hijau {
-    color: #34bf54;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-.abu2 {
-    color: #b0b0a5;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-.merah {
-    color: #ab2e2e;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-.info-t a {
-    color: white;
-    font-size: x-large;
-}
-
-.info-t {
-    background-color: #4faaff;
-    padding: 20px;
-}
-
-#saveyo {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.halus {
-    border-radius: 20px !important;
-}
-
-.padyo {
-    margin: 20px;
-}
-
-.bulat {
-    border-radius: 15px !important;
-}
-
-table {
-    empty-cells: hide !important;
-}
-
-.standings .card {
+/* Card Matches */
+.cardMatches .card {
     padding: 24px;
     margin-top: 30px;
 }
 
-.home {
-    margin-top: 15px !important;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-left: 30px;
-    padding-bottom: 20px;
+/* Table Standings */
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.profile img {
-    width: 120px;
+.content-table thead tr {
+    background-color: #122936;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-.profile {
-    padding-bottom: 30px;
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
 }
 
-#cssTable th {
-    text-align: center;
-    margin: center;
+.linked:hover {
+    font-style: bold;
+    color: #122936;
 }
 
-#cssTable td {
-    text-align: center !important;
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #122936;
+}
+
+.content-table .games span:nth-child(1) {
+    background: #36f321;
+}
+
+.content-table .games span:nth-child(2) {
+    background: #2e2e2e;
+}
+
+.content-table .games span:nth-child(3) {
+    background: #f32121;
+}
+
+/* Pagination */
+#pagination-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin: 1px;
+    background: #f32121;
+}
+
+@media (min-width: 992px) {
+    .btn {
+        background: #2196f3;
+    }
 }

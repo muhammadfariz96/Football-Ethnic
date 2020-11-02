@@ -1,16 +1,18 @@
+/* List Leagues */
 .leagues {
     justify-content: center;
 }
 
-.leagues .card {
+.cardLeague {
     position: relative;
     height: 350px;
     background: #122936;
     border-radius: 20px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
-.leagues .card::before {
+.cardLeague::before {
     content: '';
     position: absolute;
     top: -200px;
@@ -21,7 +23,7 @@
 }
 
 
-.leagues .card .imgBx {
+.cardLeague .imgLeague {
     position: relative;
     width: 100%;
     display: flex;
@@ -31,13 +33,13 @@
     z-index: 1;
 }
 
-.leagues .card .imgBx img {
+.cardLeague .imgLeague img {
     max-width: 50%;
     max-height: 50%;
 }
 
 
-.leagues .card .contentBx {
+.cardLeague .contentLeague {
     position: relative;
     padding: 20px;
     display: flex;
@@ -47,7 +49,7 @@
     z-index: 1;
 }
 
-.leagues .card .contentBx h3 {
+.cardLeague .contentLeague h3 {
     margin: 5px;
     font-size: 18px;
     color: #fff;
@@ -56,7 +58,7 @@
     letter-spacing: 1px;
 }
 
-.leagues .card .contentBx .liga {
+.cardLeague .contentLeague .liga {
     margin: 5px;
     font-size: 18px;
     color: #fff;
@@ -64,7 +66,7 @@
     letter-spacing: 1px;
 }
 
-.leagues .card .contentBx .detail {
+.cardLeague .contentLeague .detail {
     position: relative;
     top: 0;
     opacity: 1;
@@ -79,43 +81,43 @@
     transition: .5s;
 }
 
-.leagues .card:hover .contentBx .detail {
+.cardLeague:hover .contentLeague .detail {
     top: 0;
     opacity: 1;
 }
 
 @media (min-width: 992px) {
-    .leagues .card {
+    .cardLeague {
         height: 400px;
     }
 
-    .leagues .card::before {
+    .cardLeague::before {
         transform: skewY(345deg);
         transition: .5s;
     }
 
-    .leagues .card:hover::before {
+    .cardLeague:hover::before {
         transform: skewY(390deg);
     }
 
-    .leagues .card .imgBx img {
+    .cardLeague .imgLeague img {
         max-width: 200pt;
         max-height: 200pt;
         transition: .5s;
     }
 
-    .leagues .card:hover .imgBx img {
+    .cardLeague:hover .imgLeague img {
         max-width: 50%;
         max-height: 50%;
     }
 
-    .leagues .card .contentBx .detail {
+    .cardLeague .contentLeague .detail {
         top: 200px;
         opacity: 0;
         transition: .5s;
     }
 
-    .leagues .card:hover .contentBx .detail {
+    .cardLeague:hover .contentLeague .detail {
         top: 0;
         opacity: 1;
     }

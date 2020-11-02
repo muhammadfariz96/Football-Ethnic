@@ -1,13 +1,16 @@
-const Endpoint_Jer = `${BASE_URL}competitions/2002/standings`;
-const Endpoint_Blnd = `${BASE_URL}competitions/2003/standings`;
-const Endpoint_Spn = `${BASE_URL}competitions/2014/standings`;
-const Endpoint_Prc = `${BASE_URL}competitions/2015/standings`;
-const Endpoint_Itly = `${BASE_URL}competitions/2019/standings`;
-const Endpoint_Ing = `${BASE_URL}competitions/2021/standings`;
 
-const getStandingsIng = () => {
+// Endpoint Standing Liga
+const Endpoint_DEU = `${BASE_URL}competitions/2002/standings`;
+const Endpoint_NLD = `${BASE_URL}competitions/2003/standings`;
+const Endpoint_ESP = `${BASE_URL}competitions/2014/standings`;
+const Endpoint_FRA = `${BASE_URL}competitions/2015/standings`;
+const Endpoint_ITA = `${BASE_URL}competitions/2019/standings`;
+const Endpoint_ENG = `${BASE_URL}competitions/2021/standings`;
+
+// Fungsi meamanggil api stadings sesuai endpoint liga
+const getStandingsENG = async () => {
     if ('caches' in window) {
-        caches.match(Endpoint_Ing).then((response) => {
+        caches.match(Endpoint_ENG).then((response) => {
             if (response) {
                 response.json().then((data) => {
                     showStanding(data);
@@ -16,7 +19,7 @@ const getStandingsIng = () => {
         });
     }
 
-    fetchAPI(Endpoint_Ing)
+    fetchAPI(Endpoint_ENG)
         .then((data) => {
             showStanding(data);
         })
@@ -25,9 +28,9 @@ const getStandingsIng = () => {
         });
 }
 
-const getStandingsPrc = () => {
+const getStandingsFRA = async () => {
     if ('caches' in window) {
-        caches.match(Endpoint_Prc).then((response) => {
+        caches.match(Endpoint_FRA).then((response) => {
             if (response) {
                 response.json().then((data) => {
                     showStanding(data);
@@ -36,7 +39,7 @@ const getStandingsPrc = () => {
         });
     }
 
-    fetchAPI(Endpoint_Prc)
+    fetchAPI(Endpoint_FRA)
         .then((data) => {
             showStanding(data);
         })
@@ -45,9 +48,9 @@ const getStandingsPrc = () => {
         });
 }
 
-const getStandingsSpn = () => {
+const getStandingsESP = async () => {
     if ('caches' in window) {
-        caches.match(Endpoint_Spn).then((response) => {
+        caches.match(Endpoint_ESP).then((response) => {
             if (response) {
                 response.json().then((data) => {
                     showStanding(data);
@@ -56,7 +59,7 @@ const getStandingsSpn = () => {
         });
     }
 
-    fetchAPI(Endpoint_Spn)
+    fetchAPI(Endpoint_ESP)
         .then((data) => {
             showStanding(data);
         })
@@ -65,9 +68,9 @@ const getStandingsSpn = () => {
         });
 }
 
-const getStandingsJer = () => {
+const getStandingsDEU = async () => {
     if ('caches' in window) {
-        caches.match(Endpoint_Jer).then((response) => {
+        caches.match(Endpoint_DEU).then((response) => {
             if (response) {
                 response.json().then((data) => {
                     showStanding(data);
@@ -76,7 +79,7 @@ const getStandingsJer = () => {
         });
     }
 
-    fetchAPI(Endpoint_Jer)
+    fetchAPI(Endpoint_DEU)
         .then((data) => {
             showStanding(data);
         })
@@ -85,9 +88,9 @@ const getStandingsJer = () => {
         });
 }
 
-const getStandingsBlnd = () => {
+const getStandingsNLD = async () => {
     if ('caches' in window) {
-        caches.match(Endpoint_Blnd).then((response) => {
+        caches.match(Endpoint_NLD).then((response) => {
             if (response) {
                 response.json().then((data) => {
                     showStanding(data);
@@ -96,7 +99,7 @@ const getStandingsBlnd = () => {
         });
     }
 
-    fetchAPI(Endpoint_Blnd)
+    fetchAPI(Endpoint_NLD)
         .then((data) => {
             showStanding(data);
         })
@@ -105,9 +108,9 @@ const getStandingsBlnd = () => {
         });
 }
 
-const getStandingsItly = () => {
+const getStandingsITA = async () => {
     if ('caches' in window) {
-        caches.match(Endpoint_Itly).then((response) => {
+        caches.match(Endpoint_ITA).then((response) => {
             if (response) {
                 response.json().then((data) => {
                     showStanding(data);
@@ -116,7 +119,7 @@ const getStandingsItly = () => {
         });
     }
 
-    fetchAPI(Endpoint_Itly)
+    fetchAPI(Endpoint_ITA)
         .then((data) => {
             showStanding(data);
         })

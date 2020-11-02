@@ -1,3 +1,4 @@
+// Fungsi membuat database
 const dbPromise = idb.open('footballethnic', 4, (upgradeDB) => {
   if (!upgradeDB.objectStoreNames.contains('teamFav')) {
     const teamStore = upgradeDB.createObjectStore('teamFav', {
@@ -10,7 +11,7 @@ const dbPromise = idb.open('footballethnic', 4, (upgradeDB) => {
   }
 });
 
-// ADD data
+// Fungsi menambahkan data
 const addTeamFav = (data) => {
   dbPromise.then((db) => {
     const tx = db.transaction('teamFav', 'readwrite');
@@ -19,7 +20,7 @@ const addTeamFav = (data) => {
   });
 }
 
-// READ data
+// Fungsi menampilkan keselurahan data
 const getAllTeamFav = () => {
   return dbPromise.then((db) => {
     const tx = db.transaction('teamFav', 'readonly');
@@ -28,15 +29,15 @@ const getAllTeamFav = () => {
   });
 }
 
-// CHECK DATA exist
+// Fungsi mengecek data yang ada
 const isFav = (id) => {
   return dbPromise.then(async (db) => {
     const tx = await db.transaction('teamFav', 'readonly');
     const data = await tx.objectStore('teamFav').get(id);
-    return data == undefined ? false : true;
+    return data !== undefined;
   });
 }
-// DELETE data
+// Fungsi menghapus data
 const deleteTeamFav = (id) => {
   dbPromise.then((db) => {
     const tx = db.transaction('teamFav', 'readwrite');

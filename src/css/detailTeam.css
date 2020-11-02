@@ -1,0 +1,160 @@
+/* Card Team */
+.cardTeam {
+    position: relative;
+    height: 500px;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #122936, #f32121);
+}
+
+.cardTeam img {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
+}
+
+
+.cardTeam .contentTeam {
+    position: relative;
+    width: 100%;
+    left: 0;
+    padding: 40px;
+}
+
+.cardTeam .contentTeam h2 {
+    color: #fff;
+    font-family: viga;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.cardTeam .contentTeam p {
+    color: #fff;
+}
+
+.cardTeam .contentTeam a {
+    position: relative;
+    display: inline-block;
+    color: #111;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    text-decoration: none;
+}
+
+@media (min-width: 421px) and (max-width: 991px) {
+    .cardTeam {
+        height: 350px;
+        transition: .5s;
+    }
+
+    .cardTeam:hover {
+        height: 500px;
+    }
+
+    .cardTeam img {
+        height: 300px;
+        transition: .5s;
+    }
+
+    .cardTeam:hover img {
+        height: 50%;
+    }
+
+    .cardTeam .contentTeam {
+        padding: 20px 20px 20px 40px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .cardTeam:hover .contentTeam {
+        left: 0%;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (min-width: 992px) {
+    .cardTeam {
+        height: 350px;
+        align-items: center;
+        background: linear-gradient(135deg, #122936, #2196f3);
+    }
+
+    .cardTeam img {
+        height: 300px;
+        transition: .5s;
+    }
+
+    .cardTeam:hover img {
+        bottom: 0;
+        left: 90%;
+        height: 350px;
+    }
+
+    .cardTeam .contentTeam {
+        width: 50%;
+        left: 20%;
+        padding: 20px 20px 20px 40px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .cardTeam:hover .contentTeam {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Accordion Pemain */
+.accordion .contentPemain {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.accordion .contentPemain .label {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background: #122936;
+    color: #fff;
+    font-family: "viga", sans-serif;
+    cursor: pointer;
+}
+
+.accordion .contentPemain .label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentPemain.active .label::before {
+    content: '-';
+}
+
+.accordion .contentPemain .content {
+    position: relative;
+    background: #fff;
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+    overflow-y: auto;
+}
+
+.accordion .contentPemain.active .content {
+    height: 260px;
+    padding: 10px;
+}

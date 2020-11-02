@@ -1,4 +1,4 @@
-let webPush = require('web-push');
+let webPush = require('./node_modules/web-push');
 
 const vapidKeys = {
     "publicKey": "BNhWjafom-4LVlcLRALFrnBfRSoJl-nlZnEPH6l37SMr9sRGjC-JswrAEZPygF3JnBQXe3xytbFYuzmOj1OEsw4",
@@ -7,15 +7,15 @@ const vapidKeys = {
 
 
 webPush.setVapidDetails(
-    'digitalethnicid@gmail.com',
+    'mailto:digitalethnicid@gmail.com',
     vapidKeys.publicKey,
     vapidKeys.privateKey
 )
 let pushSubscription = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/efk4cG-yz2s:APA91bG7tDawrONnFLdIzktHWoOVG1BwioK52fdLQsZ17wl4NVbcS5LUtAVDDA67SUG9McBQSQUuo5lGBtk_-G75aTGz6K0xD-kL_kvihXNrfmGpxpPur_wRSturG6a9hoPy_cjDC5Pu",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/d19Zn5nANUw:APA91bGR5iRz5ZC2_ZaZhxTybzOklbn281vbcUkwyn0udaLyXTBb6Eqks1FaW8OBSJ8pu0AXZveMMNi5MAgF0Jbj7tvByxUTfn4RhnMJcq_Rc3U3oiabVq58sIhGvF1ljmshCDnu6fnQ",
     "keys": {
-        "p256dh": "BPyjPI7iPtfvDhHZ+Zo95j4+o49sTKTpL9EQMMcXcy+o18cltNs2VbZVgXbcv0jhLRPzBfcASvf5sb3HI52qzMc=",
-        "auth": "OIaLEoJ/JsqD3IFBZTq+Tg=="
+        "p256dh": "BJRNGwYYhuZiZnzaGaNUtnVLpgNJbWPPi0Dt6ej0HhB6yL+sW8L6TPhWKRVUeraCy/SklKiGEqz/e5LZXeLDZ9A=",
+        "auth": "gmaff6UfqMhdDjepWnxH6A=="
     }
 };
 let payload = 'Selamat! Aplikasi Anda sudah dapat menerima push notifikasi!';

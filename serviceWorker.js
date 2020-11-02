@@ -16,6 +16,7 @@ let urlsToCache = [
   "/src/css/league.css",
   "/src/css/standings.css",
   "/src/css/favTeam.css",
+  "/src/css/detailTeam.css",
   // JSON
   "/manifest.json",
   "/src/data/dataLeagues.json",
@@ -30,13 +31,16 @@ let urlsToCache = [
   "/src/js/Api/fetchApi.js",
   "/src/js/Api/getStandings.js",
   "/src/js/Api/renderStandings.js",
+  "/src/js/Api/getMatches.js",
+  "/src/js/Api/renderMatches.js",
   "/src/js/Api/getTeam.js",
   "/src/js/Api/renderTeam.js",
   // Database
   "/src/js/database/idb.js",
   "/src/js/database/db.js",
   // Images
-  "/src/assets/icons/icon.png",
+  "/src/assets/icons/logoFE.png",
+  "/src/assets/icons/logoFE-192.png",
   "/src/assets/images/daftar-liga/logo_bundesliga.svg",
   "/src/assets/images/daftar-liga/logo_eredivisie.svg",
   "/src/assets/images/daftar-liga/logo_laliga.svg",

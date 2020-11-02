@@ -1,3 +1,4 @@
+// Fungsi Looping Card League
 const renderLeague = () => {
     let league = '';
     let xhttp = new XMLHttpRequest();
@@ -7,11 +8,11 @@ const renderLeague = () => {
             data.forEach((liga) => {
                 league += /*html*/ `
                 <div class="col m4 s12">
-                    <div class="card">
-                        <div class="imgBx">
+                    <div class="cardLeague">
+                        <div class="imgLeague">
                         <img src="${liga.logo_liga}" alt="${liga.nama_liga}">
                         </div>
-                        <div class="contentBx">
+                        <div class="contentLeague">
                             <h3>${liga.nama_liga}</h3>
                             <h2 class="liga">${liga.negara_liga}</h2>
                             <a href="${liga.route_liga}" class="detail">Detail</a>

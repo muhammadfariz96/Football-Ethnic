@@ -1,71 +1,88 @@
 // Fungsi untuk menampilkan detail team
 const showTeam = (team) => {
-    const teamx = document.querySelector('.team');
+    const teamElement = document.querySelector('.team');
+    let teams = '';
     let pemain = '';
-    // Looping data team
-    team.squad.forEach((pemainx) => {
+
+    // Looping data pemain
+    team.squad.forEach((player) => {
         pemain += /*html*/`
-        <ul class="collapsible bulat">
-            <li>
-                <div class="collapsible-header bulat">${pemainx.name}</div>
-                    <div class="collapsible-body p-0">
-                        <ul class="collection bulat">
-                            <li class="collection-item">Posisi : ${pemainx.position}</li>
-                            <li class="collection-item">Negara Kelahiran : ${pemainx.countryOfBirth}</li>
-                            <li class="collection-item">Kebangsaan : ${pemainx.nationality}</li>
-                            <li class="collection-item">Nomor Pakaian : ${pemainx.shirtNumber == null ? 'Tidak Diketahui' : pemainx.shirtNumber}</li>
-                            <li class="collection-item">Sebagai : ${pemainx.role}</li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>`;
+        <div class="contentPemain">
+            <div class="label">${player.name}</div>
+            <div class="content">
+                <ul class="collection bulat">
+                    <li class="collection-item">Position  : ${player.position == null ? 'Tidak Diketahui' : player.position}</li>
+                    <li class="collection-item">Birth Date : ${player.countryOfBirth}</li>
+                    <li class="collection-item">Nationality : ${player.nationality}</li>
+                    <li class="collection-item">Shirt Number : ${player.shirtNumber == null ? 'Tidak Diketahui' : player.shirtNumber}</li>
+                    <li class="collection-item">Role : ${player.role}</li>
+                </ul>
+            </div>
+        </div>`;
     });
 
-    teamx.innerHTML = /*html*/`
-        <div class="card bulat">
-            <div class="card-image bulat">
-                <img class="logo-t" src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}">
-                <a class="btn-floating halfway-fab waves-effect waves-light blue" id="simpan" href=${team.id}>
-                <i class="material-icons" id="ikonx">save</i></a>
-            </div>
-            <div class="card-content">
-                <p>
-                    ${team.name} (${team.shortName}) adalah klub sepakbola yang beralamat di ${team.address}. Klub ini didirikan pada tahun 
-                    <strong>${team.founded === null ? 'yang tidak diketahui' : team.founded}</strong> dan memiliki warna khas ${team.clubColors}
-                </p>
-            </div>
+    // Menampilkan informasi team
+    teams +=/*html*/`
+    <div class="cardTeam">
+        <div class="contentTeam">
+            <h2>${team.name}</h2>
+            <p>
+                ${team.name} adalah klub sepakbola yang beralamat di ${team.address}. Klub ini didirikan pada tahun 
+                <strong>${team.founded === null ? 'yang tidak diketahui' : team.founded}</strong> dan memiliki warna khas ${team.clubColors}
+            </p>
+            <a href="${team.website}">Website</a>
+        </div>
+        <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" alt="${team.name}">
+    </div>`;
+
+    // Menampilkan informasi team dan pemain
+    teamElement.innerHTML = /*html*/`
+    <div class="col m12 s12">
+
+        ${teams}
+
+        <div class="accordion">
+            ${pemain}
         </div>
 
-        <tr>
-            <td>Anggota Tim</td>
-        </tr>
-        ${pemain}`;
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large" id="save" href=${team.id}>
+                <i class="large material-icons" id="iconSave">save</i>
+            </a>
+        </div>
+    </div>`;
 
-    // inisialisasi collapse materialize
-    $('.collapsible').collapsible();
-    const ikonxx = document.getElementById('ikonx');
-    // fungsi untuk mengecek apakah id team sudah ada di DB atau belum
-    // jika sudah maka tombol save berubah ikonnya menjadi delete
+    // Inisialisasi accordion pemain
+    const accordion = document.getElementsByClassName('contentPemain');
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener('click', function () {
+            this.classList.toggle('active')
+        });
+    }
+    // Fungsi untuk mengecek apakah id team sudah ada di DB atau belum
+    // jika sudah maka tombol save berubah ikonnya menjadi delete dan berwarna merah
     const dataxx = async () => {
         if (await isFav(parseInt(window.location.hash.substr(9)))) {
-            ikonxx.innerHTML = 'delete';
+            iconSave.innerHTML = 'delete';
+            document.getElementById("save").classList.add("red");
         }
     }
     dataxx();
 
-    $('#simpan').on('click', async (e) => {
+    $('#save').on('click', async (e) => {
         e.preventDefault();
         // mendapatkan id team dari nilai href
         const teamId = parseInt(e.currentTarget.getAttribute('href'));
 
         if (await isFav(teamId)) {
+            M.toast({ html: `${team.name} Remove from favorite team` });
+            iconSave.innerHTML = 'save';
+            document.getElementById("save").classList.remove("red");
             deleteTeamFav(teamId);
-            ikonxx.innerHTML = 'save';
-            M.toast({ html: `${team.name} Telah Dihapus Dari Tim Favorit` });
         } else {
-            M.toast({ html: `${team.name} Telah Ditambahkan Ke Tim Favorit` });
-            ikonxx.innerHTML = 'delete';
+            M.toast({ html: `${team.name} Add to favorite team` });
+            iconSave.innerHTML = 'delete';
+            document.getElementById("save").classList.add("red");
             addTeamFav(team);
         }
     });
@@ -74,17 +91,18 @@ const showTeam = (team) => {
 // Fungsi untuk menampilkan team favorite
 const showFavTeam = () => {
     getAllTeamFav().then((favs) => {
-        let data = '';
-        let data2 = '';
-        // looping data dari database
+        const favTeamElement = document.querySelector('.teamFav');
+        let notFoundFavTeam = '';
+        let favTeam = '';
+        // looping data team dari database
         favs.forEach((favs) => {
-            data2 += /*html*/`
+            favTeam += /*html*/`
             <div class="col m4 s12">
-                    <div class="card">
-                        <div class="imgBx">
+                    <div class="cardFavTeam">
+                        <div class="imgFavTeam">
                         <img src="${favs.crestUrl.replace(/^http:\/\//i, 'https://')}" alt="${favs.name}">
                         </div>
-                        <div class="contentBx">
+                        <div class="contentFavTeam">
                             <h3>${favs.name}</h3>
                             <h2 class="liga">${favs.area.name}</h2>
                             <a href="#team?id=${favs.id}" class="detail">Detail</a>
@@ -93,13 +111,18 @@ const showFavTeam = () => {
                 </div>`;
         });
 
-        data += /*html*/`
-                <table border="1"> 
-                    ${data2 === '' ? '<h4>Tidak Ada Tim Favorit</h4>' : data2} 
-                </table>
+        // Menampilkan jiga team favorite tidak ada
+        notFoundFavTeam += /*html*/`
+            <div class="col m12 center">
+                <div className="card">
+                <h2>Not Found Team Favorite</h2>
+                </div>
+            </div>`;
+
+        favTeamElement.innerHTML += /*html*/`
+                    ${favTeam === '' ? notFoundFavTeam : favTeam} 
                 `;
 
-        document.querySelector('.teamFav').innerHTML = data;
         document.querySelectorAll('.detail').forEach((lnk) => {
             lnk.addEventListener('click', (event) => {
                 // mengambil nilai id lalu dimasukkan ke variabel urlTeam Param

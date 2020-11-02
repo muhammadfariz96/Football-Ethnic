@@ -1,16 +1,18 @@
+/* Favorite Team */
 .teamsFav {
     justify-content: center;
 }
 
-.teamsFav .card {
+.cardFavTeam {
     position: relative;
     height: 350px;
+    margin-top: 20px;
     background: #122936;
     border-radius: 20px;
     overflow: hidden;
 }
 
-.teamsFav .card::before {
+.cardFavTeam::before {
     content: '';
     position: absolute;
     top: 0;
@@ -21,7 +23,7 @@
 }
 
 
-.teamsFav .card .imgBx {
+.cardFavTeam .imgFavTeam {
     position: relative;
     width: 100%;
     display: flex;
@@ -31,13 +33,13 @@
     z-index: 1;
 }
 
-.teamsFav .card .imgBx img {
+.cardFavTeam .imgFavTeam img {
     max-width: 50%;
     max-height: 50%;
 }
 
 
-.teamsFav .card .contentBx {
+.cardFavTeam .contentFavTeam {
     position: relative;
     padding: 20px;
     display: flex;
@@ -47,16 +49,17 @@
     z-index: 1;
 }
 
-.teamsFav .card .contentBx h3 {
+.cardFavTeam .contentFavTeam h3 {
     margin: 5px;
     font-size: 18px;
     color: #fff;
     font-weight: 500;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.teamsFav .card .contentBx .liga {
+.cardFavTeam .contentFavTeam .liga {
     margin: 5px;
     font-size: 18px;
     color: #fff;
@@ -64,7 +67,7 @@
     letter-spacing: 1px;
 }
 
-.teamsFav .card .contentBx .detail {
+.cardFavTeam .contentFavTeam .detail {
     position: relative;
     top: 0;
     opacity: 1;
@@ -79,43 +82,43 @@
     transition: .5s;
 }
 
-.teamsFav .card:hover .contentBx .detail {
+.cardFavTeam:hover .contentFavTeam .detail {
     top: 0;
     opacity: 1;
 }
 
 @media (min-width: 992px) {
-    .teamsFav .card {
+    .cardFavTeam {
         height: 400px;
     }
 
-    .teamsFav .card::before {
+    .cardFavTeam::before {
         clip-path: circle(150px at 80% 20%);
         transition: .5s ease-in-out;
     }
 
-    .teamsFav .card:hover::before {
+    .cardFavTeam:hover::before {
         clip-path: circle(300px at 80% -20%);
     }
 
-    .teamsFav .card .imgBx img {
+    .cardFavTeam .imgFavTeam img {
         max-width: 200pt;
         max-height: 200pt;
         transition: .5s;
     }
 
-    .teamsFav .card:hover .imgBx img {
+    .cardFavTeam:hover .imgFavTeam img {
         max-width: 50%;
         max-height: 50%;
     }
 
-    .teamsFav .card .contentBx .detail {
+    .cardFavTeam .contentFavTeam .detail {
         top: 200px;
         opacity: 0;
         transition: .5s;
     }
 
-    .teamsFav .card:hover .contentBx .detail {
+    .cardFavTeam:hover .contentFavTeam .detail {
         top: 0;
         opacity: 1;
     }

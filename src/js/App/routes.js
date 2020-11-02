@@ -11,23 +11,27 @@ const loadPage = (page) => {
         if (this.readyState === 4) {
             const content = document.querySelector('.body-content');
 
-            // proses routing atau apalah, wkwk
+            // Routing page untuk memanggil fungsi
             if (page === 'home') {
                 renderLeague();
             } else if (page === 'ligaIng') {
-                getStandingsIng();
+                getStandingsENG();
+                getMatchesENG();
             } else if (page === 'ligaJer') {
-                getStandingsJer();
+                getStandingsDEU();
+                getMatchesDEU();
             } else if (page === 'ligaSpn') {
-                getStandingsSpn();
+                getStandingsESP();
+                getMatchesESP();
             } else if (page === 'ligaPrc') {
-                getStandingsPrc();
+                getStandingsFRA();
+                getMatchesFRA();
             } else if (page === 'ligaBlnd') {
-                getStandingsBlnd();
+                getStandingsNLD();
+                getMatchesNLD();
             } else if (page === 'ligaItly') {
-                getStandingsItly();
-            } else if (page === 'cara') {
-                console.log('ini cara');
+                getStandingsITA();
+                getMatchesITA();
             } else if (page === 'favorite') {
                 showFavTeam();
             } else if (urlTeamParam.length > 0) {
@@ -45,7 +49,7 @@ const loadPage = (page) => {
             urlTeamParam = '';
         }
     };
-    // statement untuk mem fetch page sesuai dengan fungsi yang akan digunakan
+    // statement untuk fetch page league sesuai dengan fungsi yang akan digunakan
     if (urlTeamParam.length > 0) {
         xhttp.open('GET', '/src/pages/team.html');
         xhttp.send();

@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="preconnect stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="preconnect stylesheet" />
 
   <!-- Import  Materialize CSS-->
   <link rel="stylesheet" href="/src/utils/materialize/materialize.min.css">
@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="/src/css/style.css">
 
   <!-- Import Manifest -->
-  <meta name="theme-color" content=" #122936" />
+  <meta name="theme-color" content="#122936" />
   <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/src/assets/icons/icon.png" />
-  <link rel="shortcut icon" href="/src/assets/icons/icon.png" />
+  <link rel="apple-touch-icon" href="/src/assets/icons/logoFE.png" />
+  <link rel="shortcut icon" href="/src/assets/icons/logoFE.png" />
 
   <title>Football Ethnic</title>
 </head>
@@ -38,10 +38,19 @@
   </nav>
   <!-- Akhir Navigasi -->
 
+  <!-- Load Page -->
   <div class="body-content"></div>
+  <!-- Akhir Load Page -->
+
+  <!-- Footer -->
+  <footer class="center white-text">
+    <h4>Football<span>Ethnic</span></h4>
+    <p class="flow-text">Copyright by Muhammad Fariz Syakur Aghniya, 2020.</p>
+  </footer>
+  <!-- Akhir Footer -->
 
   <!-- Compile Materialize -->
-  <script src="/src/js/jquery.min.js"></script>
+  <script src="/src/utils/jquery/jquery.min.js"></script>
   <script src="/src/utils/materialize/materialize.min.js"></script>
 
   <!-- Compile Register -->
@@ -58,12 +67,12 @@
   <script src="/src/js/database/db.js"></script>
   <script src="/src/data/dataLeagues.json"></script>
 
-
-
   <!-- Compile Api -->
   <script src="/src/js/Api/fetchApi.js"></script>
   <script src="/src/js/Api/getStandings.js"></script>
   <script src="/src/js/Api/renderStandings.js"></script>
+  <script src="/src/js/Api/getMatches.js"></script>
+  <script src="/src/js/Api/renderMatches.js"></script>
   <script src="/src/js/Api/getTeam.js"></script>
   <script src="/src/js/Api/renderTeam.js"></script>
 

@@ -1,6 +1,13 @@
 @import url("league.css");
 @import url("standings.css");
 @import url("favTeam.css");
+@import url("detailTeam.css");
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 
 /* Navbar */
 .navbar {
@@ -20,5 +27,26 @@
 
 .navbar .brand-logo span {
     color: #2196f3;
+}
+
+/* Main Page */
+.body-content {
+    flex: 1 0 auto;
+}
+
+/* Footer */
+footer {
+    background: #122936;
+    padding: 10px 0;
+
+}
+
+footer h4 {
+    font-family: Viga;
+    color: #f32121;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+footer span {
+    color: #2196f3;
 }
